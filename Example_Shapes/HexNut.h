@@ -1,7 +1,7 @@
 #ifndef DULIMARTA_LOCKNUT_H
 #define DULIMARTA_LOCKNUT_H
 
-#include "BufferObject.h"
+#include "../BufferObject.h"
 class HexNut : public BufferObject {
 private:
     const int SEGMENT_SUBDIV = 3;

@@ -2,7 +2,7 @@
 #define CONE_DEMO_H
 
 #include <vector>
-#include "BufferObject.h"
+#include "../BufferObject.h"
 
 using namespace std;
 

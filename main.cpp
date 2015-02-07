@@ -16,8 +16,8 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/vector_angle.hpp>
 #include <glm/gtx/io.hpp>
-#include "Sphere.h"
-#include "HexNut.h"
+#include "Example_Shapes/Sphere.h"
+#include "Example_Shapes/HexNut.h"
 
 #undef GLFW_DLL
 #include <GLFW/glfw3.h>

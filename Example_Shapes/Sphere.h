@@ -2,7 +2,7 @@
 #define DULIMARTA_SPHERE_H
 #include <vector>
 #include <glm/vec3.hpp>
-#include "BufferObject.h"
+#include "../BufferObject.h"
 using namespace std;
 
 class Sphere : public BufferObject {

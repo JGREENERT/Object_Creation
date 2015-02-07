@@ -1,5 +1,5 @@
 #include <vector>
-#include "BufferObject.h"
+#include "../BufferObject.h"
 using namespace std;
 
 class Rectangle{
