@@ -18,6 +18,7 @@
 #include <glm/gtx/io.hpp>
 #include "Sphere.h"
 #include "HexNut.h"
+
 #undef GLFW_DLL
 #include <GLFW/glfw3.h>
 
@@ -121,7 +122,7 @@ void win_refresh (GLFWwindow *win) {
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(-S, S, S);
+    glTranslatef(-3, 2, -3);
     glMultMatrixf(glm::value_ptr(hex1_cf));
     two.render(false);
     glPopMatrix();

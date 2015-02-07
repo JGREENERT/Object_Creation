@@ -24,7 +24,7 @@ if (APPLE)
   find_library(COREVID_LIBRARY CoreVideo REQUIRED)
 endif (APPLE)
 
-set(SOURCE_FILES main.cpp HexNut.cpp BufferObject.h HexNut.H Sphere.cpp Sphere.h)
+set(SOURCE_FILES main.cpp HexNut.cpp Sphere.cpp Rectangle.cpp TCone.cpp)
 
 ## "sample" is the name of the executable
 add_executable(sample ${SOURCE_FILES})
