@@ -24,7 +24,7 @@ if (APPLE)
   find_library(COREVID_LIBRARY CoreVideo REQUIRED)
 endif (APPLE)
 
-set(SOURCE_FILES main.cpp Example_Shapes/HexNut.cpp Example_Shapes/Sphere.cpp My_Shapes/Rectangle.cpp Example_Shapes/TCone.cpp)
+set(SOURCE_FILES main.cpp "My_Objects/Table Parts/Table_Top.cpp" "My_Objects/Table Parts/Table_Leg.cpp" My_Objects/Table.cpp)
 
 ## "sample" is the name of the executable
 add_executable(sample ${SOURCE_FILES})

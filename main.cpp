@@ -16,23 +16,21 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/vector_angle.hpp>
 #include <glm/gtx/io.hpp>
-#include "Example_Shapes/Sphere.h"
-#include "Example_Shapes/HexNut.h"
+#include "My_Objects/Table.h"
 
 #undef GLFW_DLL
 #include <GLFW/glfw3.h>
 
 using namespace std;
 
-Sphere one;
-HexNut two;
+table table;
 void init_model();
 void win_refresh(GLFWwindow*);
 float arc_ball_rad_square;
 int screen_ctr_x, screen_ctr_y;
 
 glm::mat4 camera_cf; // {glm::translate(glm::mat4(1.0f), glm::vec3{0,0,-5})};
-glm::mat4 hex1_cf;
+glm::mat4 object_cf;
 
 void err_function (int what, const char *msg) {
     cerr << what << " " << msg << endl;
@@ -63,7 +61,7 @@ void win_resize (GLFWwindow * win, int width, int height)
 
 void win_refresh (GLFWwindow *win) {
 //    cout << __PRETTY_FUNCTION__ << endl;
-    glClearColor(0, 0, 0, 1);
+    glClearColor(0, 0, 0, 0);
     glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
 
     glMatrixMode (GL_MODELVIEW);
@@ -71,60 +69,11 @@ void win_refresh (GLFWwindow *win) {
     /* place the camera using the camera coordinate frame */
     glMultMatrixf (glm::value_ptr(camera_cf));
 
-    const float& S = one.radius();
-    /* draw the axes */
-    glBegin(GL_LINES);
-    glColor3ub (255, 0, 0);
-    glVertex2i (0, 0);
-    glVertex2f (S * 1.1, 0);
-    glColor3ub (0, 255, 0);
-    glVertex2i (0, 0);
-    glVertex2f (0, S * 1.1);
-    glColor3ub (0, 0, 255);
-    glVertex2i (0, 0);
-    glVertex3f (0, 0, S * 1.1);
-    glEnd();
-
-    /* The following two groups of GL_LINE_LOOP and GL_LINES draw the square block
-     * whose 4 vertices make the tetrahedron */
-    glColor3ub (255, 200, 0);
-    glBegin(GL_LINE_LOOP);
-    glVertex3f(S, S, S);
-    glVertex3f(-S, S, S);
-    glVertex3f(-S, -S, S);
-    glVertex3f(S, -S, S);
-    glEnd();
-    glBegin(GL_LINE_LOOP);
-    glVertex3f(S, S, -S);
-    glVertex3f(-S, S, -S);
-    glVertex3f(-S, -S, -S);
-    glVertex3f(S, -S, -S);
-    glEnd();
-
-    glBegin(GL_LINES);
-    glVertex3f(S, S, S);
-    glVertex3f(S, S, -S);
-    glVertex3f(-S, S, S);
-    glVertex3f(-S, S, -S);
-    glVertex3f(-S, -S, S);
-    glVertex3f(-S, -S, -S);
-    glVertex3f(S, -S, S);
-    glVertex3f(S, -S, -S);
-    glEnd();
-
-    one.render(false);  /* true: super impose the polygon outline */
-
+    //Table
     glPushMatrix();
-    glTranslatef(S, S, -S);
-    glRotatef(-45, 1, 0, 0);
-
-    two.render(false);
-    glPopMatrix();
-
-    glPushMatrix();
-    glTranslatef(-3, 2, -3);
-    glMultMatrixf(glm::value_ptr(hex1_cf));
-    two.render(false);
+    glTranslatef(0, 0, 0);
+    glMultMatrixf(glm::value_ptr(object_cf));
+    table.render();
     glPopMatrix();
 
     /* must swap buffer at the end of render function */
@@ -140,7 +89,7 @@ void key_handler (GLFWwindow *win, int key, int scan_code, int action, int mods)
         switch (key) {
             case GLFW_KEY_D: /* Uppercase 'D' */
                 /* pre mult: trans  Z-ax of the world */
-                hex1_cf = glm::translate(glm::vec3{0, +0.5f, 0}) * hex1_cf;
+                object_cf = glm::translate(glm::vec3{0, +0.5f, 0}) * object_cf;
                 break;
         }
     }
@@ -148,11 +97,11 @@ void key_handler (GLFWwindow *win, int key, int scan_code, int action, int mods)
         switch (key) {
             case GLFW_KEY_D: /* lowercase 'd' */
                 /* pre mult: trans  Z-ax of the world */
-                hex1_cf = glm::translate(glm::vec3{0, -0.5f, 0}) * hex1_cf;
+                object_cf = glm::translate(glm::vec3{0, -0.5f, 0}) * object_cf;
                 break;
             case GLFW_KEY_MINUS:
                 /* post mult: rotate around Z-ax of the hex nut */
-                hex1_cf = hex1_cf * glm::rotate(1.0f, glm::vec3{0, 0, 1});
+                object_cf = object_cf * glm::rotate(1.0f, glm::vec3{0, 0, 1});
                 break;
             case GLFW_KEY_ESCAPE:
                 glfwSetWindowShouldClose(win, true);
@@ -164,9 +113,6 @@ void key_handler (GLFWwindow *win, int key, int scan_code, int action, int mods)
             case GLFW_KEY_4:
             case GLFW_KEY_5:
             case GLFW_KEY_6:
-                /* rebuild the model at different level of detail */
-                int N = key - GLFW_KEY_0;
-                one.build((void *)&N);
                 break;
         }
     }
@@ -243,16 +189,11 @@ void init_gl() {
 }
 
 void make_model() {
-    int N = 0;
-    one.build ((void *)&N);
-    two.build(nullptr);
-
-    hex1_cf = glm::rotate(30.0f, glm::vec3{0, 1, 0});   /* rotate 30 degs around Y-axis */
+    table.build();
+    object_cf = glm::rotate(30.0f, glm::vec3{0, 1, 0});   /* rotate 30 degs around Y-axis */
 }
 
 int main() {
-cout << "Hello" << endl;
-
     if(!glfwInit()) {
         cerr << "Can't initialize GLFW" << endl;
         glfwTerminate();
