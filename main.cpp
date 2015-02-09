@@ -107,7 +107,11 @@ void key_handler (GLFWwindow *win, int key, int scan_code, int action, int mods)
                 glfwSetWindowShouldClose(win, true);
                 break;
             case GLFW_KEY_0:
+                glPolygonMode(GL_FRONT, GL_LINE);
+                break;
             case GLFW_KEY_1:
+                glPolygonMode(GL_FRONT, GL_FILL);
+                break;
             case GLFW_KEY_2:
             case GLFW_KEY_3:
             case GLFW_KEY_4:

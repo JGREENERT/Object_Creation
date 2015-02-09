@@ -221,7 +221,7 @@ void Table_Top::render() const{
     glColorPointer(3, GL_FLOAT, 0, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, i_buf);
 
-    glDrawElements (GL_QUAD_STRIP, 30, GL_UNSIGNED_SHORT, 0);
+    glDrawElements (GL_QUAD_STRIP, indexes.size(), GL_UNSIGNED_SHORT, 0);
 
     glBindBuffer (GL_ARRAY_BUFFER, 0);
     glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, 0);

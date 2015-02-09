@@ -4,7 +4,6 @@ using namespace std;
 
 class Table_Top{
 private:
-    const float size = 1;
     const float length = 2;
     const float height = 0.075;
     const float width = 1.5;
