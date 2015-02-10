@@ -44,118 +44,146 @@ void Table_Top::build(){
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1 + .05f);
+    color.push_back(color2+ .05f);
+    color.push_back(color3+ .05f);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1 + .05f);
+    color.push_back(color2+ .05f);
+    color.push_back(color3+ .05f);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1 + .05f);
+    color.push_back(color2+ .05f);
+    color.push_back(color3+ .05f);
 
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1 + .05f);
+    color.push_back(color2+ .05f);
+    color.push_back(color3+ .05f);
 
     //Right Face
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     //Left Face
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     //Back Face
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
+    //Front Face
+    vertices.push_back(-length);
+    vertices.push_back(-height);
+    vertices.push_back(width);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
+
+    vertices.push_back(-length);
+    vertices.push_back(height);
+    vertices.push_back(width);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
+
+    vertices.push_back(length);
+    vertices.push_back(height);
+    vertices.push_back(width);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
+
+    vertices.push_back(length);
+    vertices.push_back(-height);
+    vertices.push_back(width);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     //Top Indexes
     indexes.push_back(0);
@@ -194,8 +222,16 @@ void Table_Top::build(){
     indexes.push_back(17);
     indexes.push_back(18);
     indexes.push_back(19);
-    indexes.push_back(0);
-    indexes.push_back(1);
+    indexes.push_back(16);
+    indexes.push_back(17);
+
+    //Front Face
+    indexes.push_back(20);
+    indexes.push_back(21);
+    indexes.push_back(22);
+    indexes.push_back(23);
+    indexes.push_back(20);
+    indexes.push_back(21);
 
     glBindBuffer (GL_ARRAY_BUFFER, v_buf);
     glBufferData (GL_ARRAY_BUFFER, vertices.size() * sizeof(float),

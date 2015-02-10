@@ -23,7 +23,8 @@
 
 using namespace std;
 
-table table;
+table table1;
+table table2;
 void init_model();
 void win_refresh(GLFWwindow*);
 float arc_ball_rad_square;
@@ -61,7 +62,7 @@ void win_resize (GLFWwindow * win, int width, int height)
 
 void win_refresh (GLFWwindow *win) {
 //    cout << __PRETTY_FUNCTION__ << endl;
-    glClearColor(0, 0, 0, 0);
+    glClearColor(1, 1, 1, 0);
     glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
 
     glMatrixMode (GL_MODELVIEW);
@@ -69,11 +70,17 @@ void win_refresh (GLFWwindow *win) {
     /* place the camera using the camera coordinate frame */
     glMultMatrixf (glm::value_ptr(camera_cf));
 
-    //Table
+    //Tables
     glPushMatrix();
-    glTranslatef(0, 0, 0);
+    glTranslatef(3, 0, -1);
     glMultMatrixf(glm::value_ptr(object_cf));
-    table.render();
+    table1.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-3, 0, -1);
+    glMultMatrixf(glm::value_ptr(object_cf));
+    table1.render();
     glPopMatrix();
 
     /* must swap buffer at the end of render function */
@@ -193,7 +200,8 @@ void init_gl() {
 }
 
 void make_model() {
-    table.build();
+    table1.build();
+    table2.build();
     object_cf = glm::rotate(30.0f, glm::vec3{0, 1, 0});   /* rotate 30 degs around Y-axis */
 }
 

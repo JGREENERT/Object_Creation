@@ -24,7 +24,7 @@ if (APPLE)
   find_library(COREVID_LIBRARY CoreVideo REQUIRED)
 endif (APPLE)
 
-set(SOURCE_FILES main.cpp "My_Objects/Table Parts/Table_Top.cpp" "My_Objects/Table Parts/Table_Leg.cpp" My_Objects/Table.cpp)
+set(SOURCE_FILES main.cpp "My_Objects/Table Parts/Table_Top.cpp" "My_Objects/Table Parts/Table_Leg.cpp" "My_Objects/Table.cpp" "My_Objects/Table Parts/Table_Crossbar.cpp" "My_Objects/Table Parts/Table_Bottom_Bar.cpp")
 
 ## "sample" is the name of the executable
 add_executable(sample ${SOURCE_FILES})

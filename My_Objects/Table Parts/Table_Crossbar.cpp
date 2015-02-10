@@ -1,14 +1,12 @@
-#include "Table_Leg.h"
+#include "Table_Crossbar.h"
 
-Table_Leg::~Table_Leg()
-{
+Table_Crossbar::~Table_Crossbar(){
     glDeleteBuffers(1, &v_buf);
     glDeleteBuffers(1, &i_buf);
     glDeleteBuffers(1, &c_buf);
 }
 
-void Table_Leg::build()
-{
+void Table_Crossbar::build(){
     glGenBuffers (1, &v_buf);
     glGenBuffers (1, &i_buf);
     glGenBuffers (1, &c_buf);
@@ -187,6 +185,7 @@ void Table_Leg::build()
     color.push_back(color2);
     color.push_back(color3);
 
+
     //Top Indexes
     indexes.push_back(0);
     indexes.push_back(1);
@@ -251,8 +250,7 @@ void Table_Leg::build()
     glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
-void Table_Leg::render() const
-{
+void Table_Crossbar::render() const{
     glPushAttrib(GL_ENABLE_BIT);
     glBindBuffer(GL_ARRAY_BUFFER, v_buf);
     glVertexPointer(3, GL_FLOAT, 0, 0);
@@ -260,7 +258,7 @@ void Table_Leg::render() const
     glColorPointer(3, GL_FLOAT, 0, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, i_buf);
 
-    glDrawElements (GL_QUAD_STRIP, 30, GL_UNSIGNED_SHORT, 0);
+    glDrawElements (GL_QUAD_STRIP, indexes.size(), GL_UNSIGNED_SHORT, 0);
 
     glBindBuffer (GL_ARRAY_BUFFER, 0);
     glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, 0);
