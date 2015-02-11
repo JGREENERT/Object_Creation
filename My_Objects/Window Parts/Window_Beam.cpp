@@ -1,12 +1,12 @@
-#include "Table_Bottom_Bar.h"
+#include "Window_Beam.h"
 
-Table_Bottom_Bar::~Table_Bottom_Bar(){
+Window_Beam::~Window_Beam(){
     glDeleteBuffers(1, &v_buf);
     glDeleteBuffers(1, &i_buf);
     glDeleteBuffers(1, &c_buf);
 }
 
-void Table_Bottom_Bar::build(){
+void Window_Beam::build(){
     glGenBuffers (1, &v_buf);
     glGenBuffers (1, &i_buf);
     glGenBuffers (1, &c_buf);
@@ -15,30 +15,30 @@ void Table_Bottom_Bar::build(){
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1+.05);
-    color.push_back(color2+.05);
-    color.push_back(color3+.05);
+    color.push_back(color1+.5);
+    color.push_back(color2+.5);
+    color.push_back(color3+.5);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1+.05);
-    color.push_back(color2+.05);
-    color.push_back(color3+.05);
+    color.push_back(color1+.5);
+    color.push_back(color2+.5);
+    color.push_back(color3+.5);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1+.05);
-    color.push_back(color2+.05);
-    color.push_back(color3+.05);
+    color.push_back(color1+.5);
+    color.push_back(color2+.5);
+    color.push_back(color3+.5);
 
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1+.05);
-    color.push_back(color2+.05);
-    color.push_back(color3+.05);
+    color.push_back(color1+.5);
+    color.push_back(color2+.5);
+    color.push_back(color3+.5);
 
     //Rectangle Bottom
     vertices.push_back(length);
@@ -249,7 +249,7 @@ void Table_Bottom_Bar::build(){
     glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
-void Table_Bottom_Bar::render() const{
+void Window_Beam::render() const{
     glPushAttrib(GL_ENABLE_BIT);
     glBindBuffer(GL_ARRAY_BUFFER, v_buf);
     glVertexPointer(3, GL_FLOAT, 0, 0);

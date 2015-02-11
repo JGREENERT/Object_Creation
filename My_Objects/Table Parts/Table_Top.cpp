@@ -44,30 +44,30 @@ void Table_Top::build(){
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1 + .05f);
-    color.push_back(color2+ .05f);
-    color.push_back(color3+ .05f);
+    color.push_back(color1);
+    color.push_back(color2);
+    color.push_back(color3);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1 + .05f);
-    color.push_back(color2+ .05f);
-    color.push_back(color3+ .05f);
+    color.push_back(color1);
+    color.push_back(color2);
+    color.push_back(color3);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1 + .05f);
-    color.push_back(color2+ .05f);
-    color.push_back(color3+ .05f);
+    color.push_back(color1);
+    color.push_back(color2);
+    color.push_back(color3);
 
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1 + .05f);
-    color.push_back(color2+ .05f);
-    color.push_back(color3+ .05f);
+    color.push_back(color1);
+    color.push_back(color2);
+    color.push_back(color3);
 
     //Right Face
     vertices.push_back(length);

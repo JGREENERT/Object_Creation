@@ -17,175 +17,175 @@ void Table_Leg::build()
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.05);
+    color.push_back(color2+.05);
+    color.push_back(color3+.05);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.05);
+    color.push_back(color2+.05);
+    color.push_back(color3+.05);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.05);
+    color.push_back(color2+.05);
+    color.push_back(color3+.05);
 
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.05);
+    color.push_back(color2+.05);
+    color.push_back(color3+.05);
 
     //Rectangle Bottom
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.10);
+    color.push_back(color2+.10);
+    color.push_back(color3+.10);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.10);
+    color.push_back(color2+.10);
+    color.push_back(color3+.10);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.10);
+    color.push_back(color2+.10);
+    color.push_back(color3+.10);
 
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.10);
+    color.push_back(color2+.10);
+    color.push_back(color3+.10);
 
     //Right Face
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.15);
+    color.push_back(color2+.15);
+    color.push_back(color3+.15);
 
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.15);
+    color.push_back(color2+.15);
+    color.push_back(color3+.15);
 
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.15);
+    color.push_back(color2+.15);
+    color.push_back(color3+.15);
 
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.15);
+    color.push_back(color2+.15);
+    color.push_back(color3+.15);
 
     //Left Face
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.20);
+    color.push_back(color2+.20);
+    color.push_back(color3+.20);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.20);
+    color.push_back(color2+.20);
+    color.push_back(color3+.20);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.20);
+    color.push_back(color2+.20);
+    color.push_back(color3+.20);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.20);
+    color.push_back(color2+.20);
+    color.push_back(color3+.20);
 
     //Back Face
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.25);
+    color.push_back(color2+.25);
+    color.push_back(color3+.25);
 
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.25);
+    color.push_back(color2+.25);
+    color.push_back(color3+.25);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.25);
+    color.push_back(color2+.25);
+    color.push_back(color3+.25);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.25);
+    color.push_back(color2+.25);
+    color.push_back(color3+.25);
 
     //Front Face
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.30);
+    color.push_back(color2+.30);
+    color.push_back(color3+.30);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.30);
+    color.push_back(color2+.30);
+    color.push_back(color3+.30);
 
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.30);
+    color.push_back(color2+.30);
+    color.push_back(color3+.30);
 
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1);
-    color.push_back(color2);
-    color.push_back(color3);
+    color.push_back(color1+.30);
+    color.push_back(color2+.30);
+    color.push_back(color3+.30);
 
     //Top Indexes
     indexes.push_back(0);

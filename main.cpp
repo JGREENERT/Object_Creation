@@ -17,21 +17,25 @@
 #include <glm/gtx/vector_angle.hpp>
 #include <glm/gtx/io.hpp>
 #include "My_Objects/Table.h"
+#include "My_Objects/Window.h"
 
 #undef GLFW_DLL
 #include <GLFW/glfw3.h>
 
 using namespace std;
 
-table table1;
-table table2;
+Table table1;
+Table table2;
+Window window1;
 void init_model();
 void win_refresh(GLFWwindow*);
 float arc_ball_rad_square;
 int screen_ctr_x, screen_ctr_y;
 
 glm::mat4 camera_cf; // {glm::translate(glm::mat4(1.0f), glm::vec3{0,0,-5})};
-glm::mat4 object_cf;
+glm::mat4 table1_cf;
+glm::mat4 table2_cf;
+glm::mat4 window1_cf;
 
 void err_function (int what, const char *msg) {
     cerr << what << " " << msg << endl;
@@ -73,14 +77,23 @@ void win_refresh (GLFWwindow *win) {
     //Tables
     glPushMatrix();
     glTranslatef(3, 0, -1);
-    glMultMatrixf(glm::value_ptr(object_cf));
+    glMultMatrixf(glm::value_ptr(table1_cf));
+    glRotated(90, 0, 1, 0);
     table1.render();
     glPopMatrix();
 
     glPushMatrix();
     glTranslatef(-3, 0, -1);
-    glMultMatrixf(glm::value_ptr(object_cf));
-    table1.render();
+    glMultMatrixf(glm::value_ptr(table2_cf));
+    glRotated(90, 0, 1, 0);
+    table2.render();
+    glPopMatrix();
+
+    //Window
+    glPushMatrix();
+    glTranslatef(0, 1.75, -3.5);
+    glMultMatrixf(glm::value_ptr(window1_cf));
+    window1.render();
     glPopMatrix();
 
     /* must swap buffer at the end of render function */
@@ -96,7 +109,7 @@ void key_handler (GLFWwindow *win, int key, int scan_code, int action, int mods)
         switch (key) {
             case GLFW_KEY_D: /* Uppercase 'D' */
                 /* pre mult: trans  Z-ax of the world */
-                object_cf = glm::translate(glm::vec3{0, +0.5f, 0}) * object_cf;
+                table1_cf = glm::translate(glm::vec3{0, +0.5f, 0}) * table1_cf;
                 break;
         }
     }
@@ -104,11 +117,12 @@ void key_handler (GLFWwindow *win, int key, int scan_code, int action, int mods)
         switch (key) {
             case GLFW_KEY_D: /* lowercase 'd' */
                 /* pre mult: trans  Z-ax of the world */
-                object_cf = glm::translate(glm::vec3{0, -0.5f, 0}) * object_cf;
+                table1_cf = glm::translate(glm::vec3{0, -0.5f, 0}) * table1_cf;
                 break;
             case GLFW_KEY_MINUS:
                 /* post mult: rotate around Z-ax of the hex nut */
-                object_cf = object_cf * glm::rotate(1.0f, glm::vec3{0, 0, 1});
+                table1_cf = table1_cf * glm::rotate(1.0f, glm::vec3{0, 0, 1});
+                table2_cf = table2_cf * glm::rotate(180.0f, glm::vec3{0, 0, 1});
                 break;
             case GLFW_KEY_ESCAPE:
                 glfwSetWindowShouldClose(win, true);
@@ -120,10 +134,32 @@ void key_handler (GLFWwindow *win, int key, int scan_code, int action, int mods)
                 glPolygonMode(GL_FRONT, GL_FILL);
                 break;
             case GLFW_KEY_2:
+                table1_cf = table1_cf * glm::scale(glm::vec3(0.5, 0.5, 0.5));
+                break;
             case GLFW_KEY_3:
+                table1_cf = table1_cf * glm::scale(glm::vec3(2, 2, 2));
+                break;
             case GLFW_KEY_4:
+                camera_cf *= glm::translate(glm::vec3(0, 1, -2));
+                camera_cf *= glm::rotate(4.5f, glm::vec3(0, 1, 0));
+                break;
             case GLFW_KEY_5:
+                camera_cf *= glm::translate(glm::vec3(0, 0, -4));
+                camera_cf *= glm::rotate(180.0f, glm::vec3(1, 0, 0));
+                break;
             case GLFW_KEY_6:
+                camera_cf *= glm::translate(glm::vec3(0, -1, -3));
+                camera_cf *= glm::rotate(170.0f * 9, glm::vec3(0, 1, 0));
+                break;
+            case GLFW_KEY_7:
+                camera_cf *= glm::translate(glm::vec3(0, 0, -3));
+                camera_cf *= glm::rotate(-180.0f * 9, glm::vec3(1, 0, 0));
+                break;
+            case GLFW_KEY_8:
+                window1_cf = window1_cf * glm::translate(glm::vec3(0, -0.25, 0.5));
+                break;
+            case GLFW_KEY_9:
+                window1_cf = window1_cf * glm::translate(glm::vec3(0, 0.25, -0.5));
                 break;
         }
     }
@@ -200,9 +236,14 @@ void init_gl() {
 }
 
 void make_model() {
+    //Table
     table1.build();
     table2.build();
-    object_cf = glm::rotate(30.0f, glm::vec3{0, 1, 0});   /* rotate 30 degs around Y-axis */
+    table1_cf = glm::translate(glm::vec3(0, 0, 0));
+    table2_cf = glm::translate(glm::vec3(0, 0, 0));
+    //Window
+    window1.build();
+    window1_cf = glm::translate(glm::vec3(0, 0, 0));
 }
 
 int main() {

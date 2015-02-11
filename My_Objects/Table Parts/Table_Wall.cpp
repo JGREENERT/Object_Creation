@@ -1,12 +1,12 @@
-#include "Table_Bottom_Bar.h"
+#include "Table_Wall.h"
 
-Table_Bottom_Bar::~Table_Bottom_Bar(){
+Table_Wall::~Table_Wall(){
     glDeleteBuffers(1, &v_buf);
     glDeleteBuffers(1, &i_buf);
     glDeleteBuffers(1, &c_buf);
 }
 
-void Table_Bottom_Bar::build(){
+void Table_Wall::build(){
     glGenBuffers (1, &v_buf);
     glGenBuffers (1, &i_buf);
     glGenBuffers (1, &c_buf);
@@ -15,175 +15,175 @@ void Table_Bottom_Bar::build(){
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1+.05);
-    color.push_back(color2+.05);
-    color.push_back(color3+.05);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1+.05);
-    color.push_back(color2+.05);
-    color.push_back(color3+.05);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1+.05);
-    color.push_back(color2+.05);
-    color.push_back(color3+.05);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1+.05);
-    color.push_back(color2+.05);
-    color.push_back(color3+.05);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     //Rectangle Bottom
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1+.10);
-    color.push_back(color2+.10);
-    color.push_back(color3+.10);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1+.10);
-    color.push_back(color2+.10);
-    color.push_back(color3+.10);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1+.10);
-    color.push_back(color2+.10);
-    color.push_back(color3+.10);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1+.10);
-    color.push_back(color2+.10);
-    color.push_back(color3+.10);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     //Right Face
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1+.15);
-    color.push_back(color2+.15);
-    color.push_back(color3+.15);
+    color.push_back(color1);
+    color.push_back(color2);
+    color.push_back(color3);
 
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1+.15);
-    color.push_back(color2+.15);
-    color.push_back(color3+.15);
+    color.push_back(color1);
+    color.push_back(color2);
+    color.push_back(color3);
 
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1+.15);
-    color.push_back(color2+.15);
-    color.push_back(color3+.15);
+    color.push_back(color1);
+    color.push_back(color2);
+    color.push_back(color3);
 
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1+.15);
-    color.push_back(color2+.15);
-    color.push_back(color3+.15);
+    color.push_back(color1);
+    color.push_back(color2);
+    color.push_back(color3);
 
     //Left Face
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1+.20);
-    color.push_back(color2+.20);
-    color.push_back(color3+.20);
+    color.push_back(color1);
+    color.push_back(color2);
+    color.push_back(color3);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1+.20);
-    color.push_back(color2+.20);
-    color.push_back(color3+.20);
+    color.push_back(color1);
+    color.push_back(color2);
+    color.push_back(color3);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1+.20);
-    color.push_back(color2+.20);
-    color.push_back(color3+.20);
+    color.push_back(color1);
+    color.push_back(color2);
+    color.push_back(color3);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1+.20);
-    color.push_back(color2+.20);
-    color.push_back(color3+.20);
+    color.push_back(color1);
+    color.push_back(color2);
+    color.push_back(color3);
 
     //Back Face
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1+.25);
-    color.push_back(color2+.25);
-    color.push_back(color3+.25);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1+.25);
-    color.push_back(color2+.25);
-    color.push_back(color3+.25);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(-width);
-    color.push_back(color1+.25);
-    color.push_back(color2+.25);
-    color.push_back(color3+.25);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(-width);
-    color.push_back(color1+.25);
-    color.push_back(color2+.25);
-    color.push_back(color3+.25);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     //Front Face
     vertices.push_back(-length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1+.30);
-    color.push_back(color2+.30);
-    color.push_back(color3+.30);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(-length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1+.30);
-    color.push_back(color2+.30);
-    color.push_back(color3+.30);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(length);
     vertices.push_back(height);
     vertices.push_back(width);
-    color.push_back(color1+.30);
-    color.push_back(color2+.30);
-    color.push_back(color3+.30);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     vertices.push_back(length);
     vertices.push_back(-height);
     vertices.push_back(width);
-    color.push_back(color1+.30);
-    color.push_back(color2+.30);
-    color.push_back(color3+.30);
+    color.push_back(color4);
+    color.push_back(color5);
+    color.push_back(color6);
 
     //Top Indexes
     indexes.push_back(0);
@@ -249,7 +249,7 @@ void Table_Bottom_Bar::build(){
     glBindBuffer (GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
-void Table_Bottom_Bar::render() const{
+void Table_Wall::render() const{
     glPushAttrib(GL_ENABLE_BIT);
     glBindBuffer(GL_ARRAY_BUFFER, v_buf);
     glVertexPointer(3, GL_FLOAT, 0, 0);

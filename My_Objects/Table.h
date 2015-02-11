@@ -3,11 +3,12 @@
 #include "Table Parts/Table_Leg.h"
 #include "Table Parts/Table_Crossbar.h"
 #include "Table Parts/Table_Bottom_Bar.h"
+#include "Table Parts/Table_Wall.h"
 using namespace std;
 
-class table{
+class Table{
 public:
-    ~table();
+    ~Table();
     void build();
     void render() const;
 };
