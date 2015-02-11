@@ -18,6 +18,8 @@
 #include <glm/gtx/io.hpp>
 #include "My_Objects/Table.h"
 #include "My_Objects/Window.h"
+#include "My_Objects/AllComputer.h"
+#include "My_Objects/AllKeyboard.h"
 
 #undef GLFW_DLL
 #include <GLFW/glfw3.h>
@@ -27,6 +29,23 @@ using namespace std;
 Table table1;
 Table table2;
 Window window1;
+AllComputer cp1;
+AllComputer cp2;
+AllComputer cp3;
+AllComputer cp4;
+AllComputer cp5;
+AllComputer cp6;
+AllComputer cp7;
+AllComputer cp8;
+AllKeyboard keyboard1;
+AllKeyboard keyboard2;
+AllKeyboard keyboard3;
+AllKeyboard keyboard4;
+AllKeyboard keyboard5;
+AllKeyboard keyboard6;
+AllKeyboard keyboard7;
+AllKeyboard keyboard8;
+
 void init_model();
 void win_refresh(GLFWwindow*);
 float arc_ball_rad_square;
@@ -36,6 +55,7 @@ glm::mat4 camera_cf; // {glm::translate(glm::mat4(1.0f), glm::vec3{0,0,-5})};
 glm::mat4 table1_cf;
 glm::mat4 table2_cf;
 glm::mat4 window1_cf;
+glm::mat4 computer_cf;
 
 void err_function (int what, const char *msg) {
     cerr << what << " " << msg << endl;
@@ -95,6 +115,197 @@ void win_refresh (GLFWwindow *win) {
     glMultMatrixf(glm::value_ptr(window1_cf));
     window1.render();
     glPopMatrix();
+
+    //Computers
+    glPushMatrix();
+    glTranslatef(4, 0, -2.25);
+    glScaled(.9, .9, .9);
+    glRotatef(90, 0, -1, 0);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    cp1.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(4, 0, .25);
+    glScaled(.9, .9, .9);
+    glRotatef(90, 0, -1, 0);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    cp2.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(2, 0, .25);
+    glScaled(.9, .9, .9);
+    glRotatef(90, 0, 1, 0);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    cp3.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(2, 0, -2.25);
+    glScaled(.9, .9, .9);
+    glRotatef(90, 0, 1, 0);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    cp4.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-2, 0, -2.25);
+    glScaled(.9, .9, .9);
+    glRotatef(90, 0, -1, 0);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    cp5.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-2, 0, .25);
+    glScaled(.9, .9, .9);
+    glRotatef(90, 0, -1, 0);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    cp6.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-4, 0, .25);
+    glScaled(.9, .9, .9);
+    glRotatef(90, 0, 1, 0);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    cp7.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-4, 0, -2.25);
+    glScaled(.9, .9, .9);
+    glRotatef(90, 0, 1, 0);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    cp8.render();
+    glPopMatrix();
+
+    //Keyboards
+    glPushMatrix();
+    glTranslatef(-2, .1, -2.65);
+    glScaled(.9, .9, .9);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    keyboard5.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-2, .1, -.25);
+    glScaled(.9, .9, .9);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    keyboard6.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-4.35, .1, -.25);
+    glScaled(.9, .9, .9);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    keyboard7.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-4.35, .1, -2.65);
+    glScaled(.9, .9, .9);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    keyboard8.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(1.65, .1, -2.65);
+    glScaled(.9, .9, .9);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    keyboard5.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(1.65, .1, -.25);
+    glScaled(.9, .9, .9);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    keyboard6.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(4, .1, -.25);
+    glScaled(.9, .9, .9);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    keyboard7.render();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(4, .1, -2.65);
+    glScaled(.9, .9, .9);
+    glMultMatrixf(glm::value_ptr(computer_cf));
+    keyboard8.render();
+    glPopMatrix();
+
+    //Lines
+    glBegin(GL_LINE_STRIP);
+    float x = 4;
+    float y = 0.15f;
+    float z = .5f;
+    glVertex3f(x, y, z);
+    glVertex3f(3.3f, y, z);
+    glVertex3f(3.3f, y, z-.3);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    x = 2;
+    glRotatef(-45, 0, 0, 1);
+    glVertex3f(x, y, z);
+    glVertex3f(2.6f, y, z);
+    glVertex3f(2.6f, y, z-.3);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    x = 4;
+    z -= 2.5;
+    glRotatef(-45, 0, 0, 1);
+    glVertex3f(x, y, z);
+    glVertex3f(3.3f, y, z);
+    glVertex3f(3.3f, y, z-.3);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    x = 2;
+    glRotatef(-45, 0, 0, 1);
+    glVertex3f(x, y, z);
+    glVertex3f(2.6f, y, z);
+    glVertex3f(2.6f, y, z-.3);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    x = -4;
+    y = 0.15f;
+    z = .5f;
+    glVertex3f(x, y, z);
+    glVertex3f(-3.3f, y, z);
+    glVertex3f(-3.3f, y, z-.3);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    x = -2;
+    glRotatef(-45, 0, 0, 1);
+    glVertex3f(x, y, z);
+    glVertex3f(-2.6f, y, z);
+    glVertex3f(-2.6f, y, z-.3);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    x = -4;
+    z -= 2.5;
+    glRotatef(-45, 0, 0, 1);
+    glVertex3f(x-.23, y, z);
+    glVertex3f(-3.3f, y, z);
+    glVertex3f(-3.3f, y, z-.3);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    x = -2;
+    glRotatef(-45, 0, 0, 1);
+    glVertex3f(x, y, z);
+    glVertex3f(-2.6f, y, z);
+    glVertex3f(-2.6f, y, z-.3);
+    glEnd();
 
     /* must swap buffer at the end of render function */
     glfwSwapBuffers(win);
@@ -167,8 +378,8 @@ void key_handler (GLFWwindow *win, int key, int scan_code, int action, int mods)
 }
 
 /*
-    The virtual trackball technique implemented here is based on:
-    https://www.opengl.org/wiki/Object_Mouse_Trackball
+    The virtual trackeyboardall technique implemented here is based on:
+    https://www.opengl.org/wiki/Object_Mouse_Trackeyboardall
 */
 void cursor_handler (GLFWwindow *win, double xpos, double ypos) {
     int state = glfwGetMouseButton(win, GLFW_MOUSE_BUTTON_LEFT);
@@ -244,6 +455,25 @@ void make_model() {
     //Window
     window1.build();
     window1_cf = glm::translate(glm::vec3(0, 0, 0));
+    //Computers
+    cp1.build();
+    cp2.build();
+    cp3.build();
+    cp4.build();
+    cp5.build();
+    cp6.build();
+    cp7.build();
+    cp8.build();
+    //Keyboards
+    keyboard1.build();
+    keyboard2.build();
+    keyboard3.build();
+    keyboard4.build();
+    keyboard5.build();
+    keyboard6.build();
+    keyboard7.build();
+    keyboard8.build();
+    computer_cf = glm::translate(glm::vec3(0, 0, 0));
 }
 
 int main() {

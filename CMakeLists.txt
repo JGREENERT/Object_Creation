@@ -25,7 +25,9 @@ if (APPLE)
 endif (APPLE)
 
 set(SOURCE_FILES main.cpp "My_Objects/Table Parts/Table_Top.cpp" "My_Objects/Table Parts/Table_Leg.cpp" "My_Objects/Table.cpp" "My_Objects/Table Parts/Table_Crossbar.cpp" "My_Objects/Table Parts/Table_Bottom_Bar.cpp" "My_Objects/Table Parts/Table_Wall.cpp"
-"My_Objects/Window.cpp" "My_Objects/Window Parts/Window_Beam.cpp" "My_Objects/Window Parts/Window_Glass.cpp")
+"My_Objects/Window.cpp" "My_Objects/Window Parts/Window_Beam.cpp" "My_Objects/Window Parts/Window_Glass.cpp" "My_Objects/Computer Parts/Computer_Connector.cpp"
+"My_Objects/AllComputer.cpp" "My_Objects/Computer Parts/compFrame.cpp" "My_Objects/Computer Parts/compFrame1.cpp" "My_Objects/Computer Parts/Computer.cpp" "My_Objects/Computer Parts/ComputerBack.cpp"
+"My_Objects/Computer Parts/ComputerStand.cpp" "My_Objects/Computer Parts/Screen.cpp" "My_Objects/Keyboard Parts/Keys.cpp" "My_Objects/AllKeyboard.cpp" "My_Objects/Keyboard Parts/Keyboard.cpp")
 
 ## "sample" is the name of the executable
 add_executable(sample ${SOURCE_FILES})
